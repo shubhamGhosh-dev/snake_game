@@ -114,7 +114,11 @@ body {
 }
 
 .game__start-btn:disabled,
-.game__pause-btn:disabled {
+.game__pause-btn:disabled,
+.control__top-btn:disabled,
+.control__left-btn:disabled,
+.control__right-btn:disabled,
+.control__down-btn:disabled{
    background-color: #525252;
    cursor: not-allowed;
    color: #929292;
@@ -173,8 +177,8 @@ body {
    /* border: 1px solid; */
    border: 25px solid transparent;
 
-   -webkit-border-image: url(img/border3.png) 100 round;
-   border-image: url(img/border3.png) 100 round;
+   -webkit-border-image: url(img/border.png) 100 round;
+   border-image: url(img/border.png) 100 round;
 }
 
 .game__grass-left {

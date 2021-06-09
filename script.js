@@ -27,6 +27,20 @@ downControlBtn.addEventListener("click", () => {changeDirection({ keyCode: 40 })
 startBtn.addEventListener("click", start);
 pauseBtn.addEventListener("click", pause);
 
+function disableControlBtns(){
+   topControlBtn.disabled = true;
+   leftControlBtn.disabled = true;
+   rightControlBtn.disabled = true;
+   downControlBtn.disabled = true;
+}
+
+function enableControlBtns(){
+   topControlBtn.disabled = false;
+   leftControlBtn.disabled = false;
+   rightControlBtn.disabled = false;
+   downControlBtn.disabled = false;
+}
+
 let snakeBody;
 
 pauseBtn.disabled = true;
@@ -37,6 +51,7 @@ function start(){
    direction = "right";
    ScoreDOM.innerHTML = score;
    pauseBtn.disabled = false;
+   enableControlBtns();
    snakeBody = [
       { x: 200, y: 250 },
       { x: 190, y: 250 },
@@ -54,9 +69,11 @@ function start(){
 function pause(){
    if(!isPaused){
       isPaused = true;
+      disableControlBtns()
       pauseBtn.innerHTML = "Resume";
    }else{
       isPaused = false;
+      enableControlBtns()
       pauseBtn.innerHTML = "Pause";
       main();
    }
@@ -80,7 +97,7 @@ function main() {
       createFood();
 
       main();
-   }, 100);
+   }, 150);
 }
 
 function checkForHit() {
@@ -88,6 +105,7 @@ function checkForHit() {
       if (snakeBody[i].x === snakeBody[0].x && snakeBody[i].y === snakeBody[0].y) {
          startBtn.disabled = false;
          pauseBtn.disabled = true;
+         disableControlBtns();
          return true;
       }
    }
@@ -100,6 +118,7 @@ function checkForHit() {
    ) {
       startBtn.disabled = false;
       pauseBtn.disabled = true;
+      disableControlBtns();
       return true;
    }
 
