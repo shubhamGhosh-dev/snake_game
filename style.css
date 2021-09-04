@@ -72,7 +72,8 @@ body {
 
 /********************** Bottam Left Section *************************/
 .game__start {
-   width: 35rem;
+   width: 30rem;
+   z-index: 100;
 }
 
 .game__initial-btns {
@@ -126,7 +127,8 @@ body {
 
 /********************** Game Control Section *************************/
 .game__controls {
-   width: 35rem;
+   width: 30rem;
+   z-index: 100;
 }
 
 .control__btns {
@@ -170,7 +172,9 @@ body {
 .game__container {
    position: absolute;
    left: 50%;
-   transform: translate(-50%);
+   top: 11rem;
+   transform: translate(-50%) scale(1.6);
+   z-index: 10;
 }
 
 #myCanvas {
@@ -226,8 +230,8 @@ body {
    }
 
    .game__container {
-      transform: translate(-50%) scale(0.8);
-      top: -4rem;
+      transform: translate(-50%) scale(1.4);
+      top: 7rem;
    }
     #game__background {
       display: none;
@@ -285,6 +289,11 @@ body {
    .control__down-btn{
       font-size: 1rem;
    }
+
+   .game__container {
+      transform: translate(-50%) scale(1.2);
+      top: 3rem
+   }
 }
 
 @media (max-width: 420px) {
@@ -300,13 +309,13 @@ body {
    }
 
    .game__container {
-      transform: translate(-50%) scale(0.7);
-      top: -8rem;
+      transform: translate(-50%) scale(1);
+      top: 2rem;
    }
 }
 
 @media (max-width: 348px){
    .game__container {
-      transform: translate(-50%) scale(0.6);
+      transform: translate(-50%) scale(0.9);
    }
 }

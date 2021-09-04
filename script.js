@@ -97,7 +97,7 @@ function main() {
       createFood();
 
       main();
-   }, 150);
+   }, 120);
 }
 
 function checkForHit() {
